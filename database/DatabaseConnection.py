@@ -19,6 +19,9 @@ def getConnection():
 def execute(cursor,statement):
     try:
         cursor.execute(statement)
-        return cursor.fetchall()
+        try:
+            return cursor.fetchall()
+        except:
+            return "no results"
     except mysql.connector.Error as err:
         raise mysql.connector.Error(str(err))

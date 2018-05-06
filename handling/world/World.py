@@ -1,3 +1,9 @@
-class World:
-    def __init__(self):
-        print("1")
+import Find
+
+
+def init():
+    Find.findChannel(0)
+
+
+
+

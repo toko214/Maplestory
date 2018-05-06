@@ -1,7 +1,7 @@
 import time
 from database import DatabaseConnection
 from constants import ServerConstants
-from handling.world.World import World
+from handling.world import World
 
 
 class Start:
@@ -17,10 +17,11 @@ class Start:
         cursor = connection.cursor()
         DatabaseConnection.execute(cursor,"UPDATE accounts SET loggedin = 0")
         print "Loading " + ServerConstants.SERVERNAME
-        World()
+        World.init()
 
 
 def main():
+
     instance = Start()
     instance.run()
 
